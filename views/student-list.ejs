@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Students</h1>
+    <ul class="list-group">
+        <% students.forEach(student => { %>
+            <li class="list-group-item">
+                <a href="/student/<%= student._id %>"><%= student.name %></a>
+            </li>
+        <% }) %>
+    </ul>
+    <a href="/student/new" class="btn btn-primary mt-4">Add New Student</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

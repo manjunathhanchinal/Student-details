@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New Student</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Add New Student</h1>
+    <% if (errors) { %>
+        <div class="alert alert-danger">
+            <ul>
+                <% errors.forEach(error => { %>
+                    <li><%= error.msg %></li>
+                <% }) %>
+            </ul>
+        </div>
+    <% } %>
+    <form action="/student" method="POST"  enctype="multipart/form-data" class="mt-4">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" accept="image/*" class="form-control">
+          </div>
+        <button type="submit" class="btn btn-primary">Add Student</button>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="mb-4">Student Details</h1>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title"><%= student.name %></h2>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><strong>Age:</strong> <%= student.age %></p>
+            <p class="card-text"><strong>Email:</strong> <%= student.email %></p>
+            <p class="card-text"><strong>Image:</strong></p>
+            <% if (student.imagePath) { %>
+                <img src="/<%= student.imagePath %>" alt="Student Image" class="img-thumbnail" style="width: 300px; height: auto;">
+            <% } else { %>
+              <p>No image available.</p>
+            <% } %>
+          </div>
+    </div>
+    <a href="/student" class="btn btn-secondary mt-4">Back to list</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
